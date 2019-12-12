@@ -50,11 +50,15 @@ window.addEventListener("load",function(){
             document.getElementById("launchStatus").innerHTML =  'Shuttle not ready for launch'
             document.getElementById('launchStatus').style.color = "red";
             document.getElementById("fuelStatus").innerHTML = 'Fuel level NOT high enough for launch'
+         }else{
+            document.getElementById("fuelStatus").innerHTML = 'Fuel level high enough for launch'
          }
          if(cargoMass.value>10000){
             document.getElementById("launchStatus").innerHTML =  'Shuttle not ready for launch'
             document.getElementById('launchStatus').style.color = "red";
             document.getElementById("cargoStatus").innerHTML = 'Too much Cargo Mass for launch'
+         }else{
+            document.getElementById("cargoStatus").innerHTML = 'Cargo mass low enough for launch'
          }
          if(fuelLevel.value>10000&&cargoMass.value<10000){
             document.getElementById("launchStatus").innerHTML = 'Shuttle ready for launch';
@@ -75,6 +79,10 @@ window.addEventListener("load",function(){
          `
             })
           })
+         }else{
+            document.getElementById("launchStatus").innerHTML =  'Shuttle not ready for launch'
+            document.getElementById('launchStatus').style.color = "red";
+            document.getElementById("missionTarget").innerHTML = ``;
          }
       }
       event.preventDefault();      
